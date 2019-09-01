@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Med-Si-iWorks
                 </div>
 
                 <div class="links">
