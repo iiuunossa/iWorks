@@ -1,8 +1,6 @@
-@extends('layouts.app')
 
 @section('title','Create Task')
 
-@section('content')
+@include('tasks._form')
 
-@endsection
-    
+

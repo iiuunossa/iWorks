@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/create', function () {
-    return view('tasks.create_task');
-});
 
 Route::get('/form', function () {
     return view('tasks._form');
 });
+
+Route::get('/create','TaskController@create');
+Route::post('/save','TaskController@store');
 

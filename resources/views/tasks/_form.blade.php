@@ -27,9 +27,9 @@
 
     <div><h2>ข้อมูลภาระงาน</h2></div><hr></br>
         <div class="form-group row">
-            <label for="type" class="col-sm-2 col-form-label"><b>หมวดงาน : </b></label>
+            <label for="task_group" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงาน : </b></label>
             <div class="col-sm-10">
-                <select class="form-control" id="type" name="type">
+                <select class="form-control" id="task_group" name="task_group">
                   <option value="" hidden select>เลือกหมวดงาน</option>
                     <option value="1">บริหารจัดการ</option>
                     <option value="2">พัฒนาระบบ</option>
@@ -49,25 +49,19 @@
     </div>
 
     <div class="form-group row">
-    <label for="detail" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>วัน/เวลาที่เริ่มต้น : </b></label>
+    <label for="date_beg" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>วัน/เวลาที่เริ่มต้น : </b></label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="detail" name="detail">
+      <input type="datetime-local" class="form-control" id="date_beg" name="date_beg">
     </div>
     </div>
 
     <div class="form-group row">
-      <label for="detail" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>วัน/เวลาที่สิ้นสุด : </b></label>
+      <label for="date_end" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>วัน/เวลาที่สิ้นสุด : </b></label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="detail" name="detail">
+        <input type="datetime-local" class="form-control" id="date_end" name="date_end">
       </div>
     </div>
 
-    <div class="form-group row">
-      <label for="name" class="col-sm-2 col-form-label"><b>เวลาทำงาน : </b></label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
-      </div>
-    </div>
 
     <fieldset class="form-group">
       <div class="row">
@@ -96,8 +90,6 @@
         <button type="submit" class="btn btn-primary">Save</button>
       </div>
     </div>
-    
-
 </form>
 </div>
 @endsection
