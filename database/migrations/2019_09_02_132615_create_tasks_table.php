@@ -17,8 +17,9 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->integer('task_group');
             $table->text('detail')->nullable();
-            $table->datetime('date_beg')->nullable();
-            $table->datetime('date_end')->nullable();
+            $table->date('date')->nullable();
+            $table->time('beg_time')->nullable();
+            $table->time('end_time')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
         });

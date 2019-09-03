@@ -36,17 +36,16 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         
-     
-  
         $task = new \App\Task();
-        // $task->task_group = $request->input('task_group');
-        // $task->detail = $request->input('detail');
-        // $task->status =$request->input('status');
-        // $task->save(); 
-       // return view('tasks.create_task');
-         return $request -> all();
-
-
+        $task->task_group = $request->input('task_group');
+        $task->detail = $request->input('detail');
+        $task->date = $request->input('date');
+        $task->beg_time = $request->input('beg_time');
+        $task->end_time = $request->input('end_time');
+        $task->status =$request->input('status');
+        $task->save(); 
+        // return view('tasks.create_task');
+        return $request -> all();
     }
 
     /**
