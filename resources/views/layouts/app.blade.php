@@ -27,7 +27,7 @@
                 ภาระงาน
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Add_task">
-                <a class="dropdown-item" href="#">ลงข้อมูลภาระงาน</a>
+                <a class="dropdown-item" href="/create">ลงข้อมูลภาระงาน</a>
                 </div>
             </li>
 
@@ -37,9 +37,11 @@
                 จัดการข้อมูลภาระงาน
                 </a>
                 <div class="dropdown-menu" aria-labelledby="manage_task">
-                <a class="dropdown-item" href="#">หมวดงานของคณะฯ</a>
-                <a class="dropdown-item" href="#">หมวดงานของหน่วยงาน</a>
-                <a class="dropdown-item" href="#">หมวดงานรายบุุคล</a>
+                <a class="dropdown-item" href="/">จัดการข้อมูลภาระงาน</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/group">หมวดงานของคณะฯ</a>
+                <a class="dropdown-item" href="/division">หมวดงานของหน่วยงาน</a>
+                <a class="dropdown-item" href="/pa">หมวดงานรายบุุคคล</a>
                 </div>
             </li>
              <!-- ส่วนที่ 3 รายงาน -->

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Task;
+use \App\TaskDivision;
 
-class TaskController extends Controller
+class TaskDivisionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('tasks.create_task');
+        return view('tasks.create_task_division');
     }
 
     /**
@@ -35,16 +35,10 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $task = new \App\Task();
-        $task->task_group = $request->input('task_group');
-        $task->detail = $request->input('detail');
-        $task->date = $request->input('date');
-        $task->beg_time = $request->input('beg_time');
-        $task->end_time = $request->input('end_time');
-        $task->status =$request->input('status');
-        $task->save(); 
-        return view('tasks.create_task');
+        $task_division = new \App\TaskDivision();
+        $task_division->task_division_name = $request->input('task_division_name');
+        $task_division->save(); 
+        return view('tasks.create_task_division');
         //return $request -> all();
     }
 

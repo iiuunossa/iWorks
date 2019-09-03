@@ -23,3 +23,16 @@ Route::get('/form', function () {
 Route::get('/create','TaskController@create');
 Route::post('/save','TaskController@store');
 
+
+Route::get('/group','GroupController@create');
+Route::post('/save','GroupController@store');
+
+
+Route::get('/division','TaskDivisionController@create');
+Route::post('/save','TaskDivisionController@store');
+
+Route::get('/pa','PaController@create');
+Route::post('/save','PaController@store');
+
+
+

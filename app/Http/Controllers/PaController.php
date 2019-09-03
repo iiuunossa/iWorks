@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Task;
+use \App\Pa;
 
-class TaskController extends Controller
+class PaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('tasks.create_task');
+        return view('tasks.create_pa');
     }
 
     /**
@@ -35,16 +35,11 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $task = new \App\Task();
-        $task->task_group = $request->input('task_group');
-        $task->detail = $request->input('detail');
-        $task->date = $request->input('date');
-        $task->beg_time = $request->input('beg_time');
-        $task->end_time = $request->input('end_time');
-        $task->status =$request->input('status');
-        $task->save(); 
-        return view('tasks.create_task');
+        $pa = new \App\Pa();
+        $pa->pa_name = $request->input('pa_name');
+        $pa->pa_weight = $request->input('pa_weight');
+        $pa->save(); 
+        return view('tasks.create_pa');
         //return $request -> all();
     }
 

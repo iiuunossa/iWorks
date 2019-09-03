@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Task;
+use \App\Group;
 
-class TaskController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('tasks.create_task');
+        return view('tasks.create_group');
     }
 
     /**
@@ -35,17 +35,12 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $task = new \App\Task();
-        $task->task_group = $request->input('task_group');
-        $task->detail = $request->input('detail');
-        $task->date = $request->input('date');
-        $task->beg_time = $request->input('beg_time');
-        $task->end_time = $request->input('end_time');
-        $task->status =$request->input('status');
-        $task->save(); 
-        return view('tasks.create_task');
-        //return $request -> all();
+        $group = new \App\Group();
+        $group->group_name = $request->input('group_name');
+        $group->save(); 
+        return view('tasks.create_group');
+       // return $request -> all();
+
     }
 
     /**
