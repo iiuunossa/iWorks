@@ -1,12 +1,7 @@
 
-@extends('layouts.app')
-
-@section('title','Personal PA')
-
-@section('content')
 <div class="container">
 
-<form action="save" method="post">
+<form action="pa" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br> 
 
     @if($message = Session::get('success'))
@@ -43,4 +38,3 @@
 		<button type="submit" class="btn btn-primary">บันทึก</button>
 </form>
 </div>
-@endsection

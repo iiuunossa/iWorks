@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
 
-<form action="save" method="post">
+<form action="create" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br> 
 
     @if($message = Session::get('success'))

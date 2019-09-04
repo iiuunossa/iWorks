@@ -39,7 +39,9 @@ class PaController extends Controller
         $pa->pa_name = $request->input('pa_name');
         $pa->pa_weight = $request->input('pa_weight');
         $pa->save(); 
-        return view('tasks.create_pa');
+
+        return redirect('show-pa');
+        //return view('tasks.create_pa');
         //return $request -> all();
     }
 
@@ -49,9 +51,10 @@ class PaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $pas = \App\Pa::all();
+        return view('tasks.show_pa')->with(['pas' => $pas]);
     }
 
     /**

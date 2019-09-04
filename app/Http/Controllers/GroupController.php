@@ -14,7 +14,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -38,7 +38,9 @@ class GroupController extends Controller
         $group = new \App\Group();
         $group->group_name = $request->input('group_name');
         $group->save(); 
-        return view('tasks.create_group');
+
+        return redirect('show-group');
+       // return view('tasks.show_group');
        // return $request -> all();
 
     }
@@ -49,9 +51,13 @@ class GroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+  
+        $groups = \App\Group::all();
+        return view('tasks.show_group')->with(['groups' => $groups]);
+
+       
     }
 
     /**

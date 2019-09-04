@@ -38,7 +38,9 @@ class TaskDivisionController extends Controller
         $task_division = new \App\TaskDivision();
         $task_division->task_division_name = $request->input('task_division_name');
         $task_division->save(); 
-        return view('tasks.create_task_division');
+
+        return redirect('show-division');
+        //return view('tasks.create_task_division');
         //return $request -> all();
     }
 
@@ -48,9 +50,10 @@ class TaskDivisionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $task_divisions = \App\TaskDivision::all();
+        return view('tasks.show_task_division')->with(['task_divisions' => $task_divisions]);
     }
 
     /**

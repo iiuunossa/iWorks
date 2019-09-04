@@ -1,12 +1,8 @@
 
-@extends('layouts.app')
 
-@section('title','Group Division')
-
-@section('content')
 <div class="container">
 
-<form action="save" method="post">
+<form action="division" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br> 
 
     @if($message = Session::get('success'))
@@ -36,4 +32,3 @@
 		<button type="submit" class="btn btn-primary">บันทึก</button>
 </form>
 </div>
-@endsection

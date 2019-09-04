@@ -15,9 +15,9 @@ class CreatePasTable extends Migration
     {
         Schema::create('pas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('sapid');
-            $table->text('pa_name')->nullable();
-            $table->string('pa_weight')->nullable();
+            $table->integer('sapid')->nullable();
+            $table->text('pa_name');
+            $table->string('pa_weight');
             $table->timestamps();
         });
     }
