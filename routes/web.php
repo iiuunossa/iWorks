@@ -38,3 +38,9 @@ Route::get('/show-group','GroupController@show');
 Route::get('/show-division','TaskDivisionController@show');
 Route::get('/show-pa','PaController@show');
 
+Route::get('/test',function(){
+    $tasks = \App\Task::all();    
+    return view('tasks.show_task')->with(['tasks' => $tasks]);
+});
+
+

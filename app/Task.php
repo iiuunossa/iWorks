@@ -14,4 +14,10 @@ class Task extends Model
         'end_time',
         'status'
     ];
+
+    Public function getDiffTime()
+    {
+        return date('h:i:s', strtotime($this->end_time) - strtotime($this->beg_time));
+
+    } 
 }

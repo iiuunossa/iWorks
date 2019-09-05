@@ -1,9 +1,3 @@
-
-@extends('layouts.app')
-
-@section('title','Form Task')
-
-@section('content')
 <div class="container">
 
 <form action="create" method="post">
@@ -100,4 +94,3 @@
     </div>
 </form>
 </div>
-@endsection
