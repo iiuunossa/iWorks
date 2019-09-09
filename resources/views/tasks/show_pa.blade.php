@@ -13,11 +13,9 @@
   <thead>
     <tr>
         <th scope="col" class="text-info text-center">ลำดับ</th>
-        <th scope="col" class="text-info text-center">งานที่รับผิดชอบ</th>
+        <th scope="col" class="text-info text-left">งานที่รับผิดชอบ</th>
         <th scope="col" class="text-info text-center">น้ำหนัก (%)</th>
-        <th scope="col" class="text-info">แก้ไข</th>
-        <th scope="col" class="text-info">ลบ</th>
-    
+        <th></th>  
     </tr>
   </thead>
   <tbody>
@@ -26,11 +24,9 @@
         <td align="center">{{ $pa->id }}</td>
         <td>{{ $pa->pa_name}}</td>
         <td align="center">{{ $pa->pa_weight}} %</td>
-        <td>
-            <button type="button" class="btn btn-success" align="center">แก้ไข</button>
-        </td>
-        <td>
-        <button type="button" class="btn btn-danger" align="center">ลบ</button>
+        <td align="right">
+            <button type="button" class="btn btn-success">แก้ไข</button>
+            <button type="button" class="btn btn-danger">ลบ</button>
         </td>
     </tr>
     @endforeach

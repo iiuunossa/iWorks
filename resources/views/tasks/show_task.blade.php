@@ -18,8 +18,7 @@
         <th scope="col" class="text-info">เวลาสิ้นสุด</th>
         <th scope="col" class="text-info">เวลาการทำงาน</th>
         <th scope="col" class="text-info">สถานะงาน</th>
-        <th scope="col" class="text-info">แก้ไข</th>
-        <th scope="col" class="text-info">ลบ</th>
+        <th></th>
     </tr>
   </thead>
 
@@ -32,11 +31,9 @@
         <td>{{ $task->end_time}}</td>
         <td>{{ $task->getDiffTime()}}</td>
         <td>{{ $task->status}}</td>
-        <td>
-            <button type="button" class="btn btn-success" align="center">แก้ไข</button>
-        </td>
-        <td>
-        <button type="button" class="btn btn-danger" align="center">ลบ</button>
+        <td align="right">
+            <button type="button" class="btn btn-success">แก้ไข</button>
+            <button type="button" class="btn btn-danger">ลบ</button>
         </td>
     </tr>
     @endforeach

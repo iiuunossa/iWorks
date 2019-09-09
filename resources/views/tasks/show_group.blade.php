@@ -13,9 +13,8 @@
   <thead>
     <tr>
         <th scope="col" class="text-info text-center">ลำดับ</th>
-        <th scope="col" class="text-info text-center">ชื่อหมวดงาน</th>
-        <th scope="col" class="text-info">แก้ไข</th>
-        <th scope="col" class="text-info">ลบ</th>
+        <th scope="col" class="text-info text-left">ชื่อหมวดงาน</th>
+        <th></th>
     
     </tr>
   </thead>
@@ -24,10 +23,8 @@
     <tr>    
         <td align="center">{{ $group->id }}</td>
         <td>{{ $group->group_name}}</td>
-        <td>
-            <button type="button" class="btn btn-success" align="center">แก้ไข</button>
-        </td>
-        <td>
+        <td align="right">
+        <button type="button" class="btn btn-success" align="center">แก้ไข</button>
         <button type="button" class="btn btn-danger" align="center">ลบ</button>
         </td>
     </tr>

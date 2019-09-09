@@ -34,13 +34,14 @@ Route::post('/division','TaskDivisionController@store');
 Route::get('/pa','PaController@create');
 Route::post('/pa','PaController@store');
 
+
+
 Route::get('/show-group','GroupController@show');
 Route::get('/show-division','TaskDivisionController@show');
 Route::get('/show-pa','PaController@show');
+Route::get('/show-task','TaskController@show');
 
-Route::get('/test',function(){
-    $tasks = \App\Task::all();    
-    return view('tasks.show_task')->with(['tasks' => $tasks]);
+
+Route::get('/type', function () {
+    return view('tasks.create_type');
 });
-
-

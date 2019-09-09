@@ -13,9 +13,8 @@
   <thead>
     <tr>
         <th scope="col" class="text-info text-center">ลำดับ</th>
-        <th scope="col" class="text-info text-center">ชื่อหมวดงาน</th>
-        <th scope="col" class="text-info">แก้ไข</th>
-        <th scope="col" class="text-info">ลบ</th>
+        <th scope="col" class="text-info text-left">ชื่อหมวดงาน</th>
+        <th></th>
     
     </tr>
   </thead>
@@ -24,11 +23,9 @@
     <tr>    
         <td align="center">{{ $task_division->id }}</td>
         <td>{{ $task_division->task_division_name}}</td>
-        <td>
+        <td align="right">
             <button type="button" class="btn btn-success">แก้ไข</button>
-        </td>
-        <td>
-        <button type="button" class="btn btn-danger">ลบ</button>
+            <button type="button" class="btn btn-danger">ลบ</button>
         </td>
     </tr>
     @endforeach

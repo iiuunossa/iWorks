@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    
+    <link rel="stylesheet" href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
     
     <title>@yield('title')</title>
 </head>
@@ -24,10 +23,10 @@
             <!-- ส่วนที่ 1 ลงข้อมูลภาระงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="add_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ภาระงาน
+                 ภาระงาน
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Add_task">
-                <a class="dropdown-item" href="/create">ลงข้อมูลภาระงาน</a>
+                <a class="dropdown-item" href="/show-task">ลงข้อมูลภาระงาน</a>
                 </div>
             </li>
 
@@ -37,7 +36,7 @@
                 จัดการข้อมูลภาระงาน
                 </a>
                 <div class="dropdown-menu" aria-labelledby="manage_task">
-                <a class="dropdown-item" href="/">จัดการข้อมูลภาระงาน</a>
+                <a class="dropdown-item" href="/type">จัดการข้อมูลภาระงาน</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/show-group">หมวดงานของคณะฯ</a>
                 <a class="dropdown-item" href="/show-division">หมวดงานของหน่วยงาน</a>
@@ -63,6 +62,7 @@
         </div>
         </nav>
 
+        
     <p>
         @yield('content')
     </p>

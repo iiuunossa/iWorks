@@ -44,7 +44,10 @@ class TaskController extends Controller
         $task->end_time = $request->input('end_time');
         $task->status =$request->input('status');
         $task->save(); 
-        return view('tasks.create_task');
+
+
+        return redirect('show-task');
+       // return view('tasks.create_task');
         //return $request -> all();
     }
 
@@ -54,9 +57,11 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $tasks = \App\Task::all();    
+        return view('tasks.show_task')->with(['tasks' => $tasks]);
+        
     }
 
     /**
