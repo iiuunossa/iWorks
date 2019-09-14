@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href=https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
     <title>@yield('title')</title>
 </head>
 <body>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Med-Si-iWorks</a>
+        <a class="navbar-brand" href="/"><i class="fa fa-home">  Med-Si-iWorks</i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,7 +23,7 @@
             <!-- ส่วนที่ 1 ลงข้อมูลภาระงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="add_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 ภาระงาน
+                <i class="far fa-edit"> ภาระงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Add_task">
                 <a class="dropdown-item" href="/show-task">ลงข้อมูลภาระงาน</a>
@@ -33,10 +33,10 @@
             <!-- ส่วนที่ 2 จัดการข้อมูลภาระงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="manage_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                จัดการข้อมูลภาระงาน
+                <i class="fa fa-cog"> จัดการข้อมูลภาระงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="manage_task">
-                <a class="dropdown-item" href="/type">จัดการข้อมูลภาระงาน</a>
+                <a class="dropdown-item" href="/show-type">จัดการข้อมูลภาระงาน</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/show-group">หมวดงานของคณะฯ</a>
                 <a class="dropdown-item" href="/show-division">หมวดงานของหน่วยงาน</a>
@@ -46,7 +46,7 @@
              <!-- ส่วนที่ 3 รายงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="rep_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                รายงาน
+                <i class="fas fa-chart-line"> รายงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="rep_task">
                 <a class="dropdown-item" href="#">รายงานรายบุคคล</a>
@@ -57,7 +57,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
         </nav>

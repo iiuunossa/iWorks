@@ -36,6 +36,8 @@ class PaController extends Controller
     public function store(Request $request)
     {
         $pa = new \App\Pa();
+        $pa->pa_year = $request->input('pa_year');
+        $pa->pa_round = $request->input('pa_round');
         $pa->pa_name = $request->input('pa_name');
         $pa->pa_weight = $request->input('pa_weight');
         $pa->save(); 

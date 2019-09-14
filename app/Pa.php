@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Pa extends Model
 {
     Protected $fillable = [
+        'sapid',
+        'pa_year',
+        'pa_round',
         'pa_name',
-        'weight_name'
+        'pa_weight'
        
     ];
 }

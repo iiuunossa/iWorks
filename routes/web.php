@@ -34,14 +34,20 @@ Route::post('/division','TaskDivisionController@store');
 Route::get('/pa','PaController@create');
 Route::post('/pa','PaController@store');
 
+Route::get('/type','TypeController@create');
+Route::post('/type','TypeController@store');
+
 
 
 Route::get('/show-group','GroupController@show');
 Route::get('/show-division','TaskDivisionController@show');
 Route::get('/show-pa','PaController@show');
 Route::get('/show-task','TaskController@show');
+Route::get('/show-type','TypeController@show');
 
 
-Route::get('/type', function () {
-    return view('tasks.create_type');
-});
+
+
+
+
+

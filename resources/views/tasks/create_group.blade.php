@@ -27,8 +27,8 @@
         <div class="form-group col-md-6">
 			<label for="group_name"><b>ชื่อหมวดงาน : </b></label>
             <input type="text" class="form-control" id="group_name" name="group_name">
-		</div>
-	</div>
+		    </div>
+	  </div>
 		<button type="submit" class="btn btn-primary">บันทึก</button>
 </form>
 </div>

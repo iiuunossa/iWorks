@@ -16,7 +16,7 @@ class CreateTypesTable extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('sapid')->nullable();
+            $table->string('sapid')->nullable();
             $table->integer('group_id');
             $table->integer('task_division_id');
             $table->integer('task_id');

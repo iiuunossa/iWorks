@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class TaskDivision extends Model
 {
     Protected $fillable = [
-        'task_division_name'
+        'task_division_name',
+        'division_id'
        
     ];
 }

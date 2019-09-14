@@ -9,11 +9,12 @@
 </br>
 <div class="container bg-light" ></br>
 <div><h4>รายการหมวดงานของคณะฯ</h4></div></br>
+
 <table class="table">
-  <thead>
+  <thead class="text-white bg-dark">
     <tr>
-        <th scope="col" class="text-info text-center">ลำดับ</th>
-        <th scope="col" class="text-info text-left">ชื่อหมวดงาน</th>
+        <th scope="col" class="text-left">ลำดับ</th>
+        <th scope="col" class="text-left">ชื่อหมวดงาน</th>
         <th></th>
     
     </tr>
@@ -21,7 +22,7 @@
   <tbody>
     @foreach($groups as $group)
     <tr>    
-        <td align="center">{{ $group->id }}</td>
+        <td>{{ $group->id }}</td>
         <td>{{ $group->group_name}}</td>
         <td align="right">
         <button type="button" class="btn btn-success" align="center">แก้ไข</button>

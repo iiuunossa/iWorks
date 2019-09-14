@@ -16,6 +16,7 @@ class CreateTaskDivisionsTable extends Migration
         Schema::create('task_divisions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('task_division_name');
+            $table->integer('division_id')->nullable();
             $table->timestamps();
         });
     }

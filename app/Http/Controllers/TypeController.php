@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Task;
+use \App\Group;
+use \App\TaskDivision; 
+use \App\Pa;
 use \App\Type;
 
-class TaskController extends Controller
+
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,9 +28,11 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $types = \App\Type::all();
-        $tasks = \App\Task::all();
-        return view('tasks.create_task')->with(['tasks' => $tasks,'types' => $types]);
+        $groups = \App\Group::all();
+        $task_divisions = \App\TaskDivision::all();
+        $pas = \App\Pa::all();
+
+        return view('tasks.create_type')->with(['groups' => $groups,'task_divisions' => $task_divisions,'pas' => $pas]);
 
     }
 
@@ -40,19 +45,16 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         
-        $task = new \App\Task();
-        $task->task_group = $request->input('task_group');
-        $task->detail = $request->input('detail');
-        $task->date = $request->input('date');
-        $task->beg_time = $request->input('beg_time');
-        $task->end_time = $request->input('end_time');
-        $task->status =$request->input('status');
-        $task->save(); 
+        $type = new \App\Type();
+        $type->name = $request->input('name');
+        $type->group_id = $request->input('task_group');
+        $type->task_division_id = $request->input('task_division');
+        $type->task_id = $request->input('pa_group');
+        $type->save(); 
+       return redirect('show-type');
+       //return view('tasks.create_type');
+       // return $request -> all();
 
-
-        return redirect('show-task');
-       // return view('tasks.create_task');
-        //return $request -> all();
     }
 
     /**
@@ -64,9 +66,10 @@ class TaskController extends Controller
     public function show()
     {
         $types = \App\Type::all();
-        $tasks = \App\Task::all();  
-        return view('tasks.show_task')->with(['tasks' => $tasks,'types' => $types]);
-        
+        $groups = \App\Group::all();
+        $task_divisions = \App\TaskDivision::all();
+        $pas = \App\Pa::all();
+        return view('tasks.show_type')->with(['types' => $types,'groups' => $groups,'task_divisions' => $task_divisions,'pas' => $pas]);
     }
 
     /**

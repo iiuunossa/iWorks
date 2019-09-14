@@ -48,11 +48,12 @@
             <div class="col-sm-4">
                 <select class="form-control" id="task_group" name="task_group">
                   <option value="" hidden select>เลือกหมวดงาน</option>
-                    <option value="1">บริหารจัดการ</option>
-                    <option value="2">พัฒนาระบบ</option>
-                    <option value="3">MA</option>
-                    <option value="4">IT Support</option>
-                    <option value="5">ครุภัณฑ์</option>
+
+                  @foreach($types as $type)
+                    <option value="{{$type['id']}}">{{$type['name']}}</option>
+                  @endforeach
+
+
                 </select>
             </div>
         </div>
