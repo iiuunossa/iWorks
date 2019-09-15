@@ -12,6 +12,7 @@
 <table class="table">
   <thead class="text-white bg-dark">
     <tr>
+        <th scope="col" class="text-left">ลำดับ</th>
         <th scope="col">ภาระงาน</th>
         <th scope="col">วันที่</th>
         <th scope="col">เวลาเริ่มต้น</th>
@@ -24,13 +25,14 @@
 
   <tbody>
     @foreach($tasks as $task)
-    <tr>    
-        <td>{{ $task->task_group}}</td>
-        <td>{{ $task->date}}</td>
+    <tr>
+        <td>{{ $task->id }}</td>    
+        <td>{{ $task->type->type_name}}</td>
+        <td>{{date('d M, Y', strtotime($task->date))}}</td>
         <td>{{ $task->beg_time}}</td>
         <td>{{ $task->end_time}}</td>
         <td>{{ $task->getDiffTime()}}</td>
-        <td>{{ $task->status}}</td>
+        <th> {{ $task->status == 0 ? 'Ongoing' : 'Completed' }}</th>
         <td align="right">
             <button type="button" class="btn btn-success">แก้ไข</button>
             <button type="button" class="btn btn-danger">ลบ</button>

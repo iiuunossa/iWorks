@@ -24,11 +24,10 @@
     @foreach($types as $type)
     <tr>    
         <td>{{ $type->id }}</td>
-        <td>{{ $type->name}}</td>
-        <td>{{ $type->group_id}}</td>
-        <td>{{ $type->task_division_id}}</td>
-        <td>{{ $type->task_id}}</td>
-        
+        <td>{{ $type->type_name}}</td>
+        <td>{{ $type->group->group_name}}</td>
+        <td>{{ $type->task_division->task_division_name}}</td>
+        <td>{{ $type->pa->pa_name}}</td>     
         <td align="right">
             <button type="button" class="btn btn-success">แก้ไข</button>
             <button type="button" class="btn btn-danger">ลบ</button>

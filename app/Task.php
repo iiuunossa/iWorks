@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     Protected $fillable = [
-        'task_group',
+        'type_id',
         'detail',
         'date',
         'beg_time',
@@ -15,9 +15,14 @@ class Task extends Model
         'status'
     ];
 
+    public function type(){
+        return $this->belongsTo(Type::class,'type_id');
+    }
+
+
     Public function getDiffTime()
     {
-        return date('h:i:s', strtotime($this->end_time) - strtotime($this->beg_time));
+        return date('h:i', strtotime($this->end_time) - strtotime($this->beg_time));
 
     } 
 }

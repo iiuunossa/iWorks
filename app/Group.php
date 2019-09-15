@@ -10,4 +10,8 @@ class Group extends Model
         'group_name'
        
     ];
+
+    public function types(){
+        return $this->hasMany(Type::class, 'group_id','id');
+    }
 }

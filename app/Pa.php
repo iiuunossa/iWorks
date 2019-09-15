@@ -14,4 +14,8 @@ class Pa extends Model
         'pa_weight'
        
     ];
+
+    public function types(){
+        return $this->hasMany(Type::class, 'pa_id','id');
+    }
 }

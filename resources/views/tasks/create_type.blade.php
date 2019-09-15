@@ -24,9 +24,9 @@
 
 
     <div class="form-group row">
-        <label for="name" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>ชื่อหมวดงาน : </b></label>
+        <label for="type_name" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>ชื่อหมวดงาน : </b></label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="type_name" name="type_name">
         </div>
     </div>
 

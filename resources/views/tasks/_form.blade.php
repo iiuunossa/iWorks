@@ -44,13 +44,13 @@
     </div>
 
     <div class="form-group row">
-            <label for="task_group" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงาน : </b></label>
+            <label for="type_id" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงาน : </b></label>
             <div class="col-sm-4">
-                <select class="form-control" id="task_group" name="task_group">
+                <select class="form-control" id="type_id" name="type_id">
                   <option value="" hidden select>เลือกหมวดงาน</option>
 
                   @foreach($types as $type)
-                    <option value="{{$type['id']}}">{{$type['name']}}</option>
+                    <option value="{{$type['id']}}">{{$type['type_name']}}</option>
                   @endforeach
 
 

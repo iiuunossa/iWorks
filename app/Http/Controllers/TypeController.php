@@ -46,10 +46,10 @@ class TypeController extends Controller
     {
         
         $type = new \App\Type();
-        $type->name = $request->input('name');
+        $type->type_name = $request->input('type_name');
         $type->group_id = $request->input('task_group');
         $type->task_division_id = $request->input('task_division');
-        $type->task_id = $request->input('pa_group');
+        $type->pa_id = $request->input('pa_group');
         $type->save(); 
        return redirect('show-type');
        //return view('tasks.create_type');

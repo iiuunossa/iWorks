@@ -15,11 +15,11 @@ class CreateTypesTable extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('type_name');
             $table->string('sapid')->nullable();
             $table->integer('group_id');
             $table->integer('task_division_id');
-            $table->integer('task_id');
+            $table->integer('pa_id');
             $table->timestamps();
         });
     }

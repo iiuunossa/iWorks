@@ -11,4 +11,8 @@ class TaskDivision extends Model
         'division_id'
        
     ];
+
+    public function types(){
+        return $this->hasMany(Type::class, 'task_division_id','id');
+    }
 }

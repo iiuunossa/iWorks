@@ -39,9 +39,21 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validate =[
+            'type_id' => 'required',
+            'detail' => 'required|max:10',
+     
+        ];
+        $messageError = [
+            'type_id.required' => 'กรุณาเลือกหมวดงาน',
+            'detail.max' => 'ใส่รายละเอียดเกิน 10 อักขระ',  
+        ];
+
+        $request->validate($validate,$messageError);
         
         $task = new \App\Task();
-        $task->task_group = $request->input('task_group');
+        $task->type_id = $request->input('type_id');
         $task->detail = $request->input('detail');
         $task->date = $request->input('date');
         $task->beg_time = $request->input('beg_time');
@@ -50,7 +62,7 @@ class TaskController extends Controller
         $task->save(); 
 
 
-        return redirect('show-task');
+        return redirect('show-task')->with('success','บันทึกข้อมูลสำเร็จ');
        // return view('tasks.create_task');
         //return $request -> all();
     }
