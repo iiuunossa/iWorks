@@ -20,6 +20,7 @@
         <th scope="col">เวลาการทำงาน</th>
         <th scope="col">สถานะงาน</th>
         <th></th>
+        <th></th>
     </tr>
   </thead>
 
@@ -31,11 +32,25 @@
         <td>{{date('d M, Y', strtotime($task->date))}}</td>
         <td>{{ $task->beg_time}}</td>
         <td>{{ $task->end_time}}</td>
-        <td>{{ $task->getDiffTime()}}</td>
+        <td>{{ $task->getDiffTime()}} ชั่วโมง</td>
         <th> {{ $task->status == 0 ? 'Ongoing' : 'Completed' }}</th>
+        <th>
+
+          <form id = "complete-{{ $task->id }}" action="/show-task/{{ $task->id }}" method = "post">
+            @csrf
+            @method('patch')
+            <input type="hidden" name ="status" value = "1">
+          </form>
+          @if(!$task->status)
+            <button class="btn btn-success"
+            onclick="document.getElementById('complete-{{ $task->id }}').submit()"
+            ><i class="fas fa-check-circle"></i></button>
+          @endif
+        </th>
+
         <td align="right">
-            <button type="button" class="btn btn-success">แก้ไข</button>
-            <button type="button" class="btn btn-danger">ลบ</button>
+            <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
         </td>
     </tr>
     @endforeach

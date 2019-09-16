@@ -35,6 +35,23 @@ class PaController extends Controller
      */
     public function store(Request $request)
     {
+        $validate =[
+            'pa_year' => 'required',
+            'pa_round' => 'required',
+            'pa_name' => 'required',
+            'pa_name' => 'required|min:5',
+            'pa_weight' => 'required',
+        ];
+        $messageError = [
+            'pa_year.required' => 'กรุณาใส่ข้อมูลปีประเมินของการทำ PA',
+            'pa_round.required' => 'กรุณาใส่ข้อมูลรอบการประเมินของการทำ PA',
+            'pa_name.required' => 'กรุณาใส่รายละเอียดงานที่ความรับผิดชอบ', 
+            'pa_name.min' => 'กรุณาใส่ส่รายละเอียดงานที่ความรับผิดชอบอย่างน้อย 5 ตัวอักษร',
+            'pa_weight.required' => 'กรุณาใส่ข้อมูลเปอร์เซ็นต์ของ PA', 
+        ];
+
+        $request->validate($validate,$messageError);
+
         $pa = new \App\Pa();
         $pa->pa_year = $request->input('pa_year');
         $pa->pa_round = $request->input('pa_round');
@@ -42,7 +59,7 @@ class PaController extends Controller
         $pa->pa_weight = $request->input('pa_weight');
         $pa->save(); 
 
-        return redirect('show-pa');
+        return redirect('show-pa')->with('success','บันทึกข้อมูลสำเร็จ');
         //return view('tasks.create_pa');
         //return $request -> all();
     }
@@ -55,6 +72,7 @@ class PaController extends Controller
      */
     public function show()
     {
+
         $pas = \App\Pa::all();
         return view('tasks.show_pa')->with(['pas' => $pas]);
     }

@@ -27,8 +27,8 @@
         <td>{{ $pa->pa_name}}</td>
         <td align="center">{{ $pa->pa_weight}} %</td>
         <td align="right">
-            <button type="button" class="btn btn-success">แก้ไข</button>
-            <button type="button" class="btn btn-danger">ลบ</button>
+          <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+          <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
         </td>
     </tr>
     @endforeach

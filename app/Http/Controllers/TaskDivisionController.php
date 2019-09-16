@@ -35,11 +35,24 @@ class TaskDivisionController extends Controller
      */
     public function store(Request $request)
     {
+                
+        $validate =[
+            'task_division_name' => 'required',
+            'task_division_name' => 'required|min:5',
+        ];
+        $messageError = [
+            'task_division_name.required' => 'กรุณาใส่ชื่อหมวดงาน',
+            'task_division_name.min' => 'กรุณาใส่ชื่อหมวดงานอย่างน้อย 5 ตัวอักษร', 
+        ];
+
+        $request->validate($validate,$messageError);
+
+
         $task_division = new \App\TaskDivision();
         $task_division->task_division_name = $request->input('task_division_name');
         $task_division->save(); 
 
-        return redirect('show-division');
+        return redirect('show-division')->with('success','บันทึกข้อมูลสำเร็จ');
         //return view('tasks.create_task_division');
         //return $request -> all();
     }

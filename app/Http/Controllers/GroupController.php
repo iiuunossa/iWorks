@@ -35,11 +35,24 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $validate =[
+            'group_name' => 'required',
+            'group_name' => 'required|min:5',
+        ];
+        $messageError = [
+            'group_name.required' => 'กรุณาใส่ชื่อหมวดงาน',
+            'group_name.min' => 'กรุณาใส่ชื่อหมวดงานอย่างน้อย 5 ตัวอักษร', 
+        ];
+
+        $request->validate($validate,$messageError);
+        
+            
         $group = new \App\Group();
         $group->group_name = $request->input('group_name');
         $group->save(); 
 
-        return redirect('show-group');
+        return redirect('show-group')->with('success','บันทึกข้อมูลสำเร็จ');
        // return view('tasks.show_group');
        // return $request -> all();
 

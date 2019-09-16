@@ -41,13 +41,20 @@ class TaskController extends Controller
     {
 
         $validate =[
+            'date' => 'required',
+            'beg_time' => 'required',
+            'end_time' => 'required',
             'type_id' => 'required',
-            'detail' => 'required|max:10',
-     
+            'detail' => 'required',
+            'detail' => 'required|min:5',
         ];
         $messageError = [
+            'date.required' => 'กรุณาใส่วันที่ทำงาน',
+            'beg_time.required' => 'กรุณาใส่เวลาเริ่มต้น',
+            'end_time.required' => 'กรุณาใส่เวลาสิ้นสุด',
             'type_id.required' => 'กรุณาเลือกหมวดงาน',
-            'detail.max' => 'ใส่รายละเอียดเกิน 10 อักขระ',  
+            'detail.required' => 'กรุณาใส่รายละเอียด',
+            'detail.min' => 'กรุณาใส่รายละเอียดงานอย่างน้อย 5 ตัวอักษร', 
         ];
 
         $request->validate($validate,$messageError);
@@ -100,8 +107,10 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
+
     {
-        //
+        $tasks = Task::find($id)->update($request->all());
+        return redirect()->back()->with('success','ดำเนินการเรียบร้อย');
     }
 
     /**

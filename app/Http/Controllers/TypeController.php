@@ -45,13 +45,35 @@ class TypeController extends Controller
     public function store(Request $request)
     {
         
+        $validate =[
+            'type_name' => 'required',
+            'type_name' => 'required|min:5',
+            'task_group' => 'required',
+            'task_division' => 'required',
+            'pa_group' => 'required',
+
+
+
+        ];
+        $messageError = [
+            'type_name.required' => 'กรุณาใส่ชื่อหมวดงาน',
+            'type_name.min' => 'กรุณาใส่ชื่อหมวดงานอย่างน้อย 5 ตัวอักษร',
+            'task_group.required' => 'กรุณาเลือกหมวดของคณะฯ',
+            'task_division.required' => 'กรุณาเลือกหมวดงานหน่วยงาน',
+            'pa_group.required' => 'กรุณาเลือกหมวดงานตาม PA',
+
+
+        ];
+
+        $request->validate($validate,$messageError);
+
         $type = new \App\Type();
         $type->type_name = $request->input('type_name');
         $type->group_id = $request->input('task_group');
         $type->task_division_id = $request->input('task_division');
         $type->pa_id = $request->input('pa_group');
         $type->save(); 
-       return redirect('show-type');
+       return redirect('show-type')->with('success','บันทึกข้อมูลสำเร็จ');
        //return view('tasks.create_type');
        // return $request -> all();
 

@@ -43,6 +43,7 @@ Route::get('/show-group','GroupController@show');
 Route::get('/show-division','TaskDivisionController@show');
 Route::get('/show-pa','PaController@show');
 Route::get('/show-task','TaskController@show');
+Route::patch('/show-task/{id}','TaskController@update');
 Route::get('/show-type','TypeController@show');
 
 
