@@ -37,6 +37,9 @@ Route::post('/pa','PaController@store');
 Route::get('/type','TypeController@create');
 Route::post('/type','TypeController@store');
 
+Route::get('/search', function () {
+    return view('layouts.search');
+});
 
 
 Route::get('/show-group','GroupController@show');

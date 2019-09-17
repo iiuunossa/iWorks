@@ -8,7 +8,7 @@
 
 </br>
 <div class="container bg-light" ></br>
-<div><h4>PA รายบุคคล</h4></div></br>
+<div><h4>หมวดภาระงานรายบุคคล</h4></div></br>
 <table class="table">
   <thead class="text-white bg-dark">
     <tr>
