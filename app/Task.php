@@ -15,6 +15,7 @@ class Task extends Model
         'status'
     ];
 
+
     public function type(){
         return $this->belongsTo(Type::class,'type_id');
     }
@@ -22,6 +23,9 @@ class Task extends Model
 
     Public function getDiffTime()
     {
+        $start = \Carbon\Carbon::createFromFormat('H:i:s',$this->beg_time);
+        $stop = \Carbon\Carbon::createFromFormat('H:i:s',$this->end_time);
+        return $start->diffInHours($stop);
         return date('h:i', strtotime($this->end_time) - strtotime($this->beg_time));
 
     } 
