@@ -10,58 +10,15 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><i class="fa fa-home">  Med-Si-iWorks</i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            
-            <!-- ส่วนที่ 1 ลงข้อมูลภาระงาน -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="add_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="far fa-edit"> ภาระงาน</i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="Add_task">
-                <a class="dropdown-item" href="/show-task">ลงข้อมูลภาระงาน</a>
+        @if(Auth::user())
+  
+	        <form action="{{ url('logout') }}" method="POST">
+		     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="col-sm-12" align="right"></br>
+                <input type="submit" name="submit" value="Logout">
                 </div>
-            </li>
-
-            <!-- ส่วนที่ 2 จัดการข้อมูลภาระงาน -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="manage_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-cog"> จัดการข้อมูลภาระงาน</i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="manage_task">
-                <a class="dropdown-item" href="/show-type">จัดการข้อมูลภาระงาน</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/show-group">หมวดงานของคณะฯ</a>
-                <a class="dropdown-item" href="/show-division">หมวดงานของหน่วยงาน</a>
-                <a class="dropdown-item" href="/show-pa">หมวดงานรายบุุคคล</a>
-                </div>
-            </li>
-             <!-- ส่วนที่ 3 รายงาน -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="rep_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-chart-line"> รายงาน</i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="rep_task">
-                <a class="dropdown-item" href="#">รายงานรายบุคคล</a>
-                <a class="dropdown-item" href="#">รายงานของหน่วยงาน</a>
-                </div>
-            </li>
-   
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        </nav>
-
+	        </form>
+	    @endif
         
     <p>
         @yield('content')

@@ -12,6 +12,12 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
 
@@ -50,6 +56,8 @@ class GroupController extends Controller
             
         $group = new \App\Group();
         $group->group_name = $request->input('group_name');
+        $username = \Auth::id();
+        $group->username = $username;
         $group->save(); 
 
         return redirect('show-group')->with('success','บันทึกข้อมูลสำเร็จ');

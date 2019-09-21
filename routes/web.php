@@ -52,6 +52,6 @@ Route::get('/show-type','TypeController@show');
 
 
 
+Auth::routes();
 
-
-
+Route::get('/home', 'HomeController@index')->name('home');

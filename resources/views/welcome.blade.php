@@ -42,6 +42,7 @@
 
             .content {
                 text-align: center;
+                color: #00CC99;
             }
 
             .title {
@@ -49,11 +50,12 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #111111;
+                background-color: #00CC99;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 15px;
                 font-weight: 600;
-                letter-spacing: .1rem;
+                letter-spacing: .4rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -65,12 +67,20 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+           
+
+            <div class="content">
+                <div class="title m-b-md">
+                    Med-Si-iWorks
+                </div>
+                
+
+                @if (Route::has('login'))
+                <div class="top-rtight links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}"><span>Login</span></a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
@@ -79,20 +89,9 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Med-Si-iWorks
-                </div>
+            </div>
+        </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
