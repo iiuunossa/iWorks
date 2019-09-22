@@ -57,7 +57,7 @@ class GroupController extends Controller
         $group = new \App\Group();
         $group->group_name = $request->input('group_name');
         $username = \Auth::id();
-        $group->username = $username;
+        $group->user_id = $username;
         $group->save(); 
 
         return redirect('show-group')->with('success','บันทึกข้อมูลสำเร็จ');

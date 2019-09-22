@@ -12,7 +12,7 @@
 <body>
 
 
-
+        @if(Auth::user())
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/"><i class="fa fa-home">  Med-Si-iWorks</i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,19 +57,25 @@
             </li>
 
             </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-   
             
-
+            <a class="nav-link navbar-nav ml-auto text-light">{{ Auth::user()->name }}</a>
+        @endif
+            <form class="form-inline my-2 my-lg-0">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <form action="{{ url('logout')}}" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                <button class="btn btn-outline my-2 my-sm-0 text-secondary" type="submit" value="Logout"/><i class="fa fa-power-off"></i></button>
+            </form>
         </div>
         </nav>
         
-    <p>
+
+    <div class="container">
         @yield('content')
-    </p>
+    </div>
+
 
     <footer>
         @yield('footer')

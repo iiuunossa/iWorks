@@ -51,7 +51,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="task_division" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงานหน่วยงานฯ : </b></label>
+            <label for="task_division" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงานหน่วยงาน : </b></label>
             <div class="col-sm-4">
                 <select class="form-control" id="task_division" name="task_division">
                   <option value="" hidden select>เลือกหมวดงาน</option>

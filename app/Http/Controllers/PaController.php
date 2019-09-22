@@ -57,7 +57,6 @@ class PaController extends Controller
         $pa->pa_round = $request->input('pa_round');
         $pa->pa_name = $request->input('pa_name');
         $pa->pa_weight = $request->input('pa_weight');
-        $pa->sapid = Auth::User()->username;
         $pa->save(); 
 
         return redirect('show-pa')->with('success','บันทึกข้อมูลสำเร็จ');
