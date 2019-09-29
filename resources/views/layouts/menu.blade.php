@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link rel="stylesheet" href="{{url('/css/bootstrap/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url('/css/font-awesome/css/font-awesome.min.css')}}">
+    
     
     <title>@yield('title')</title>
 </head>
@@ -13,8 +15,8 @@
 
 
         @if(Auth::user())
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/"><i class="fa fa-home">  Med-Si-iWorks</i></a>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #88DDBB">
+        <a class="navbar-brand" href="/"><i class="fa fa-home" aria-hidden="true">  Med-Si-iWorks</i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,7 +27,7 @@
             <!-- ส่วนที่ 1 ลงข้อมูลภาระงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="add_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="far fa-edit"> ภาระงาน</i>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"> ภาระงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Add_task">
                 <a class="dropdown-item" href="/show-task">ลงข้อมูลภาระงาน</a>
@@ -35,7 +37,7 @@
             <!-- ส่วนที่ 2 จัดการข้อมูลภาระงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="manage_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-cog"> จัดการข้อมูลภาระงาน</i>
+                <i class="fa fa-cog" aria-hidden="true"> จัดการข้อมูลภาระงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="manage_task">
                 <a class="dropdown-item" href="/show-type">จัดการข้อมูลภาระงาน</a>
@@ -48,7 +50,7 @@
              <!-- ส่วนที่ 3 รายงาน -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="rep_task" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-chart-line"> รายงาน</i>
+                <i class="fa fa-line-chart" aria-hidden="true"> รายงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="rep_task">
                 <a class="dropdown-item" href="#">รายงานรายบุคคล</a>
@@ -58,7 +60,7 @@
 
             </ul>
             
-            <a class="nav-link navbar-nav ml-auto text-light">{{ Auth::user()->name }}</a>
+            <a class="nav-link navbar-nav ml-auto text-dark"><i class="fa fa-user" aria-hidden="true"> {{ Auth::user()->name }}</i></a>
         @endif
             <form class="form-inline my-2 my-lg-0">
                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -66,7 +68,7 @@
             </form>
             <form action="{{ url('logout')}}" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token()}}">
-                <button class="btn btn-outline my-2 my-sm-0 text-secondary" type="submit" value="Logout"/><i class="fa fa-power-off"></i></button>
+                <button class="btn btn-outline my-2 my-sm-0 text-secondary" type="submit" value="Logout"/><i class="fa fa-power-off" aria-hidden="true"></i></button>
             </form>
         </div>
         </nav>
@@ -83,7 +85,8 @@
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="{{url('/js/jquery-3.4.0.min.js') }}"></script>
+<script src="{{url('/js/popper.min.js')}}"></script>
+<script src= "{{url('/js/bootstrap/bootstrap.min.js')}}"></script>
+
 </html>

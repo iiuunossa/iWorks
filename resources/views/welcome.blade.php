@@ -42,7 +42,7 @@
 
             .content {
                 text-align: center;
-                color: #00CC99;
+                color: #88DDBB;
             }
 
             .title {
@@ -51,7 +51,7 @@
 
             .links > a {
                 color: #111111;
-                background-color: #00CC99;
+                background-color: #88DDBB;
                 padding: 0 25px;
                 font-size: 15px;
                 font-weight: 600;
