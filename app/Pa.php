@@ -11,6 +11,7 @@ class Pa extends Model
         'pa_year',
         'pa_round',
         'pa_name',
+        'group_id',
         'pa_weight'
        
     ];

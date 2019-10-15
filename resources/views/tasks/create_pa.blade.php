@@ -29,21 +29,57 @@
     <div><h2>หมวดงานรายบุคคล (PA)</h2></div><hr></br>
 
     <div class="form-row">
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-2">
 			    <label for="pa_year"><b>ปีประเมิน : </b></label>
           <input type="number" class="form-control" id="pa_year" name="pa_year">
 		    </div>
-        <div class="form-group col-md-3">
-			    <label for="pa_round"><b>รอบประเมิน : </b></label>
-          <input type="number" class="form-control" id="pa_round" name="pa_round">
-		    </div>
+
+      <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-12 pt-0"><b>รอบการประเมิน : </b></legend>
+        <div class="col-sm-12">
+          <div class="form-check-inline">
+            <input class="form-check-input" type="radio" name="pa_round" id="pa_round1" value="0" checked>
+            <label class="form-check-label" for="pa_round1">
+              รอบที่ 1
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <input class="form-check-input" type="radio" name="pa_round" id="pa_round2" value="1">
+            <label class="form-check-label" for="pa_round1">
+              รอบที่ 2
+            </label>
+          </div>
+        </div>
+      </div>
+      </fieldset>
 	  </div>
-    
+
     <div class="form-row">
         <div class="form-group col-md-6">
 			    <label for="pa_name"><b>งานที่รับผิดชอบ (PA) : </b></label>
           <textarea class="form-control" rows="5" id="pa_name" name="pa_name"></textarea>
 		    </div>
+
+      <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-12 pt-0"><b>หมวดงานของคณะฯ : </b></legend>
+        <div class="col-sm-12">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="group" id="group1" value="0" checked>
+            <label class="form-check-label" for="group1">
+            งานตามพันธกิจ
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="group" id="group2" value="1">
+            <label class="form-check-label" for="group2">
+            งานตามตำแหน่ง
+            </label>
+          </div>
+        </div>
+      </div>
+      </fieldset>
 	  </div>
 
     <div class="form-row">

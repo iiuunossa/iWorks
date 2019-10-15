@@ -81,7 +81,6 @@
             <label class="form-check-label" for="status1">
               อยู่ระหว่างดำเนินการ
             </label>  
-            
           </div>
          
           <div class="form-check">
