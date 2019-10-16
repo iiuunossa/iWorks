@@ -29,31 +29,31 @@
     <div><h2>หมวดงานรายบุคคล (PA)</h2></div><hr></br>
 
     <div class="form-row">
-        <div class="form-group col-md-2">
+      <div class="col-sm-12 col-md-2"> 
+        <div class="form-group">
 			    <label for="pa_year"><b>ปีประเมิน : </b></label>
           <input type="number" class="form-control" id="pa_year" name="pa_year">
-		    </div>
-
-      <fieldset class="form-group">
-      <div class="row">
-        <legend class="col-form-label col-sm-12 pt-0"><b>รอบการประเมิน : </b></legend>
-        <div class="col-sm-12">
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="pa_round" id="pa_round1" value="0" checked>
-            <label class="form-check-label" for="pa_round1">
-              รอบที่ 1
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="pa_round" id="pa_round2" value="1">
-            <label class="form-check-label" for="pa_round1">
-              รอบที่ 2
-            </label>
-          </div>
         </div>
       </div>
-      </fieldset>
-	  </div>
+
+      <div class="col-sm-12 col-md-6"> 
+        <div class="form-group">
+          <label for="pa_round"><b>รอบการประเมิน : </b></label><br>
+            <div class="form-check-inline">
+              <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="pa_round" id="pa_round"><label for="pa_round">รอบที่ 1</label>
+              </label>
+            </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="pa_round" id="pa_round2"><label for="pa_round2">รอบที่ 2</label>
+                </label>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
 
     <div class="form-row">
         <div class="form-group col-md-6">
