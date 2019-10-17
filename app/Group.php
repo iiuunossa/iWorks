@@ -14,4 +14,9 @@ class Group extends Model
     public function types(){
         return $this->hasMany(Type::class, 'group_id','id');
     }
+
+    public function pas(){
+        return $this->hasMany(Type::class, 'group_id','id');
+    }
+
 }

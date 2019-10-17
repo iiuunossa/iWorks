@@ -51,4 +51,9 @@ Route::get('/show-type','TypeController@show');
 
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','HomeController@index')->name('home');
+
+
+Route::get('/show-group/{id}','GroupController@edit');
+Route::patch('/show-group/{id}','GroupController@update');
+

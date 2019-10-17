@@ -89,7 +89,11 @@ class GroupController extends Controller
      */
     public function edit($id)
     {
-        //
+        $groups = \App\Group::all(); 
+        $group = \App\Group::find($id); 
+        
+        return view('tasks.show_group')->with(['groups' => $groups, 'group' => $group]);  
+
     }
 
     /**
@@ -101,7 +105,8 @@ class GroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $groups = Group::find($id)->update($request->all());
+        return redirect()->back()->with('success','แก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**

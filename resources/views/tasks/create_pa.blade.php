@@ -66,15 +66,28 @@
           <div class="form-check">
             <input class="form-check-input" type="radio" name="pa_group" id="group1" value="1" checked>
             <label class="form-check-label" for="group1">
-            งานตามพันธกิจ
+            งานตามพันธกิจและยุทธศาสตร์ของคณะฯ
             </label>
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="pa_group" id="group2" value="2">
             <label class="form-check-label" for="group2">
-            งานตามตำแหน่ง
+            งานรับผิดชอบตามตำแหน่ง
             </label>
           </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pa_group" id="group3" value="3">
+            <label class="form-check-label" for="group3">
+            งานที่ได้รับมอบหมาย
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="pa_group" id="group4" value="4">
+            <label class="form-check-label" for="group4">
+            งานเพื่อส่วนรวม
+            </label>
+          </div>
+
         </div>
       </div>
       </fieldset>

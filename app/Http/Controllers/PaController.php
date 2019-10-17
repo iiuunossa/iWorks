@@ -24,7 +24,10 @@ class PaController extends Controller
      */
     public function create()
     {
-        return view('tasks.create_pa');
+
+        $groups = \App\Group::all();
+        return view('tasks.create_pa')->with(['groups' => $groups]);
+        
     }
 
     /**

@@ -25,7 +25,7 @@
         <td>{{ $group->id }}</td>
         <td>{{ $group->group_name}}</td>
         <td align="right">
-        <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i></button>
+        <a role="button" class="btn btn-success" href="{{url('/show-group',$group->id)}}"><i class="fa fa-pencil"></i></button></a>
         <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
         </td>
     </tr>
