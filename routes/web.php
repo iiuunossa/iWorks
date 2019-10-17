@@ -41,6 +41,7 @@ Route::get('/search', function () {
 });
 
 
+
 Route::get('/show-group','GroupController@show');
 Route::get('/show-division','TaskDivisionController@show');
 Route::get('/show-pa','PaController@show');
@@ -49,8 +50,5 @@ Route::patch('/show-task/{id}','TaskController@update');
 Route::get('/show-type','TypeController@show');
 
 
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

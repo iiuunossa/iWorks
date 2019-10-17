@@ -41,38 +41,36 @@
           <label for="pa_round"><b>รอบการประเมิน : </b></label><br>
             <div class="form-check-inline">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="pa_round" id="pa_round"><label for="pa_round">รอบที่ 1</label>
+              <input type="radio" class="form-check-input" name="pa_round" id="pa_round" value="1" checked><label for="pa_round">รอบที่ 1</label>
               </label>
             </div>
               <div class="form-check-inline">
                 <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="pa_round" id="pa_round2"><label for="pa_round2">รอบที่ 2</label>
+                <input type="radio" class="form-check-input" name="pa_round" id="pa_round2" value="2"><label for="pa_round2">รอบที่ 2</label>
                 </label>
               </div>
           </div>
       </div>
     </div>
 
-
-
     <div class="form-row">
         <div class="form-group col-md-6">
 			    <label for="pa_name"><b>งานที่รับผิดชอบ (PA) : </b></label>
           <textarea class="form-control" rows="5" id="pa_name" name="pa_name"></textarea>
 		    </div>
-
+        
       <fieldset class="form-group">
       <div class="row">
         <legend class="col-form-label col-sm-12 pt-0"><b>หมวดงานของคณะฯ : </b></legend>
         <div class="col-sm-12">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="group" id="group1" value="0" checked>
+            <input class="form-check-input" type="radio" name="pa_group" id="group1" value="1" checked>
             <label class="form-check-label" for="group1">
             งานตามพันธกิจ
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="group" id="group2" value="1">
+            <input class="form-check-input" type="radio" name="pa_group" id="group2" value="2">
             <label class="form-check-label" for="group2">
             งานตามตำแหน่ง
             </label>

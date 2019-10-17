@@ -44,7 +44,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/show-group">หมวดงานของคณะฯ</a>
                 <a class="dropdown-item" href="/show-division">หมวดงานของหน่วยงาน</a>
-                <a class="dropdown-item" href="/show-pa">หมวดงานรายบุุคคล</a>
+                <a class="dropdown-item" href="/show-pa">หมวดงานรายบุคคล</a>
                 </div>
             </li>
              <!-- ส่วนที่ 3 รายงาน -->

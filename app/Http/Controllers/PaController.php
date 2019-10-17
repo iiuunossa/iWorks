@@ -38,6 +38,7 @@ class PaController extends Controller
         $validate =[
             'pa_year' => 'required',
             'pa_round' => 'required',
+            'pa_group' => 'required',
             'pa_name' => 'required',
             'pa_name' => 'required|min:5',
             'pa_weight' => 'required',
@@ -45,6 +46,7 @@ class PaController extends Controller
         $messageError = [
             'pa_year.required' => 'กรุณาใส่ข้อมูลปีประเมินของการทำ PA',
             'pa_round.required' => 'กรุณาใส่ข้อมูลรอบการประเมินของการทำ PA',
+            'pa_group.required' => 'กรุณาเลือกหมวดงานคณะฯ',
             'pa_name.required' => 'กรุณาใส่รายละเอียดงานที่ความรับผิดชอบ', 
             'pa_name.min' => 'กรุณาใส่ส่รายละเอียดงานที่ความรับผิดชอบอย่างน้อย 5 ตัวอักษร',
             'pa_weight.required' => 'กรุณาใส่ข้อมูลเปอร์เซ็นต์ของ PA', 
@@ -55,6 +57,7 @@ class PaController extends Controller
         $pa = new \App\Pa();
         $pa->pa_year = $request->input('pa_year');
         $pa->pa_round = $request->input('pa_round');
+        $pa->group_id = $request->input('pa_group');
         $pa->pa_name = $request->input('pa_name');
         $pa->pa_weight = $request->input('pa_weight');
         $pa->save(); 
