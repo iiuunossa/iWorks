@@ -2,15 +2,19 @@
 
 <div class="container">
 
+
 @if(isset($group))
     <form action="{{url('/show-group',$group->id)}}" method="post" enctype="multipart/form-data"> 
     <input type="hidden" name="_method" value="PATCH"> 
 @else
-    <form action="save" method="post" enctype="multipart/form-data">
+    <form action="group" method="post" enctype="multipart/form-data">
 @endif
-    
+
+
 <form action="group" method="post">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br> 
+    <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br>
+
+
 
     @if($message = Session::get('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">

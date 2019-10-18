@@ -26,7 +26,13 @@
         <td>{{ $group->group_name}}</td>
         <td align="right">
         <a role="button" class="btn btn-success" href="{{url('/show-group',$group->id)}}"><i class="fa fa-pencil"></i></button></a>
-        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+        
+        <form method="POST" action="{{ url('/show-group', $group->id) }}">
+				    {{ csrf_field() }}
+				    {{ method_field('DELETE') }}
+				    <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
+				</form>
+
         </td>
     </tr>
     @endforeach

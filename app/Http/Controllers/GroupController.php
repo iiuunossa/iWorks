@@ -78,7 +78,6 @@ class GroupController extends Controller
         $groups = \App\Group::all();
         return view('tasks.show_group')->with(['groups' => $groups]);
 
-       
     }
 
     /**
@@ -117,6 +116,8 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $group=Group::find($id);
+        $group->delete();
+        return back()->with('success','ลบข้อมูลเรียบร้อยแล้ว');
     }
 }
