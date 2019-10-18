@@ -105,7 +105,7 @@ class GroupController extends Controller
     public function update(Request $request, $id)
     {
         $groups = Group::find($id)->update($request->all());
-        return redirect()->back()->with('success','แก้ไขข้อมูลเรียบร้อยแล้ว');
+        return redirect('show-group')->with('success','แก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
