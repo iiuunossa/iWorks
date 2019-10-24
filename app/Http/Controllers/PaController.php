@@ -78,9 +78,9 @@ class PaController extends Controller
      */
     public function show()
     {
-
+        $groups = \App\Group::all();
         $pas = \App\Pa::all();
-        return view('tasks.show_pa')->with(['pas' => $pas]);
+        return view('tasks.show_pa')->with(['pas' => $pas, 'groups' => $groups]);
     }
 
     /**
