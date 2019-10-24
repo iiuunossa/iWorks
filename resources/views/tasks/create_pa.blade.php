@@ -28,72 +28,52 @@
 
     <div><h2>หมวดงานรายบุคคล (PA)</h2></div><hr></br>
 
-    <div class="form-row">
-      <div class="col-sm-12 col-md-2"> 
+    <div class="row">
+      <div class="col-sm-12 col-md-6"> 
         <div class="form-group">
 			    <label for="pa_year"><b>ปีประเมิน : </b></label>
           <input type="number" class="form-control" id="pa_year" name="pa_year">
         </div>
       </div>
-
       <div class="col-sm-12 col-md-6"> 
         <div class="form-group">
           <label for="pa_round"><b>รอบการประเมิน : </b></label><br>
-            <div class="form-check-inline">
-              <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="pa_round" id="pa_round" value="1" checked><label for="pa_round">รอบที่ 1</label>
-              </label>
-            </div>
-              <div class="form-check-inline">
-                <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="pa_round" id="pa_round2" value="2"><label for="pa_round2">รอบที่ 2</label>
-                </label>
-              </div>
+          <div class="form-check-inline pt-1">
+            <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="pa_round" id="pa_round" value="1" checked><label for="pa_round">รอบที่ 1</label>
+            </label>
           </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="pa_round" id="pa_round2" value="2"><label for="pa_round2">รอบที่ 2</label>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="form-row">
-        <div class="form-group col-md-6">
-			    <label for="pa_name"><b>งานที่รับผิดชอบ (PA) : </b></label>
-          <textarea class="form-control" rows="5" id="pa_name" name="pa_name"></textarea>
-		    </div>
-        
-      <fieldset class="form-group">
-      <div class="row">
-        <legend class="col-form-label col-sm-12 pt-0"><b>หมวดงานของคณะฯ : </b></legend>
-        <div class="col-sm-12">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="pa_group" id="group1" value="1" checked>
-            <label class="form-check-label" for="group1">
-            งานตามพันธกิจและยุทธศาสตร์ของคณะฯ
-            </label>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="form-group">
+            <label for="pa_name"><b>งานที่รับผิดชอบ (PA) : </b></label>
+            <textarea class="form-control" rows="3" id="pa_name" name="pa_name"></textarea>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="pa_group" id="group2" value="2">
-            <label class="form-check-label" for="group2">
-            งานรับผิดชอบตามตำแหน่ง
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="pa_group" id="group3" value="3">
-            <label class="form-check-label" for="group3">
-            งานที่ได้รับมอบหมาย
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="pa_group" id="group4" value="4">
-            <label class="form-check-label" for="group4">
-            งานเพื่อส่วนรวม
-            </label>
-          </div>
-
         </div>
-      </div>
-      </fieldset>
+        <div class="col-sm-12 col-md-6">
+        <div class="form-group">
+            <label><b>หมวดงานของคณะฯ : </b></label>
+            @foreach($groups as $group)
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pa_group" id="group1" value="1" checked>
+                <label class="form-check-label" for="group1"> {{ $group->group_name }}</label>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      
 	  </div>
 
-    <div class="form-row">
+    <div class="row">
         <div class="form-group col-md-6">
 			<label for="pa_weight"><b>น้ำหนัก (%) : </b></label>
             <input type="number" class="form-control" id="pa_weight" name="pa_weight">
