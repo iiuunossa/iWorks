@@ -74,10 +74,10 @@
 	  </div>
 
     <div class="row">
-        <div class="form-group col-md-6">
-			<label for="pa_weight"><b>น้ำหนัก (%) : </b></label>
-            <input type="number" class="form-control" id="pa_weight" name="pa_weight">
-		    </div>
+      <div class="form-group col-md-6">
+			  <label for="pa_weight"><b>น้ำหนัก (%) : </b></label>
+        <input type="number" class="form-control" id="pa_weight" name="pa_weight">
+		  </div>
     </div>
 		<button type="submit" class="btn btn-primary">บันทึก</button>
 </form>
