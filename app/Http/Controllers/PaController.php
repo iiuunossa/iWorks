@@ -62,6 +62,7 @@ class PaController extends Controller
         $pa->pa_round = $request->input('pa_round');
         $pa->group_id = $request->input('pa_group');
         $pa->pa_name = $request->input('pa_name');
+        $pa->task_division_id = $request->input('task_division_id');
         $pa->pa_weight = $request->input('pa_weight');
         $pa->save(); 
 
@@ -79,8 +80,9 @@ class PaController extends Controller
     public function show()
     {
         $groups = \App\Group::all();
+        $task_divisions = \App\TaskDivision::all();
         $pas = \App\Pa::all();
-        return view('tasks.show_pa')->with(['pas' => $pas, 'groups' => $groups]);
+        return view('tasks.show_pa')->with(['pas' => $pas, 'groups' => $groups, 'task_divisions' => $task_divisions]);
     }
 
     /**

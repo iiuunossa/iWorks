@@ -50,13 +50,16 @@
     </div>
 
     <div class="form-group row">
-            <label for="type_id" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงาน : </b></label>
+            <label for="type_id" class="col-lg-2 col-md-2 col-sm-2 col-form-lable"><b>หมวดงาน (หน่วยงาน) : </b></label>
             <div class="col-sm-4">
                 <select class="form-control" id="type_id" name="type_id">
                   <option value="" hidden select>เลือกหมวดงาน</option>
 
-                  @foreach($types as $type)
-                    <option value="{{$type['id']}}">{{$type['type_name']}}</option>
+                  <!-- @foreach($pas as $pa)
+                    <option value="{{$pa['id']}}">{{$pa->pa_name}}</option>
+                  @endforeach -->
+                  @foreach($task_divisions as $task_division)
+                    <option value="{{$task_division->id}}">{{$task_division->task_division_name}}</option>
                   @endforeach
 
 

@@ -82,9 +82,10 @@ class TaskController extends Controller
      */
     public function show()
     {
-        $types = \App\Type::all();
+        $pas = \App\Pa::all();
         $tasks = \App\Task::all();  
-        return view('tasks.show_task')->with(['tasks' => $tasks,'types' => $types]);
+        $task_divisions = \App\TaskDivision::all();
+        return view('tasks.show_task')->with(['tasks' => $tasks,'pas' => $pas, 'task_divisions' => $task_divisions]);
         
     }
 
