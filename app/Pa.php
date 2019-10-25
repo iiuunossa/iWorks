@@ -11,9 +11,9 @@ class Pa extends Model
         'pa_year',
         'pa_round',
         'pa_name',
-        'group_id',
+        'pa_group_id',
         'pa_weight'
-       
+
     ];
 
     public function types(){
@@ -22,5 +22,9 @@ class Pa extends Model
 
     public function group(){
         return $this->belongsTo(Group::class,'group_id');
+    }
+
+    public function taskDivisions() {
+        return $this->belongsToMany(TaskDivision::class,'pa_task_divisions')->withTimestamps();
     }
 }

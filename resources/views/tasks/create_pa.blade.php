@@ -72,7 +72,7 @@
               <label><b>หมวดงานของคณะฯ : </b></label>
               @foreach($groups as $group)
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="pa_group" id="{{ $group->id }}" value="1" checked>
+                <input class="form-check-input" type="radio" name="pa_group_id" id="{{ $group->id }}" value="{{ $group->id}}">
                   <label class="form-check-label" for="{{ $group->id }}"> {{ $group->group_name }}</label>
                 </div>
               @endforeach
@@ -85,7 +85,10 @@
           <div class="form-group">
             <label for="pa_weight"><b>หมวดงานของหน่วยงาน :</b></label><br/>
             @foreach($task_divisions as $task_division)
-              <label class="checkbox-inline"><input type="checkbox" value="{{$task_division->id}}">{{$task_division->task_division_name}}</label>
+              <label class="checkbox-inline">
+                <input name="task_divisions[]" type="checkbox" value="{{ $task_division->id }}">
+                {{ $task_division->task_division_name }}
+              </label>
             @endforeach
           </div>
         </div>

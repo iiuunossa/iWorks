@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasTable extends Migration
+class CreatePaTaskDivisionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreatePasTable extends Migration
      */
     public function up()
     {
-        Schema::create('pas', function (Blueprint $table) {
+        Schema::create('pa_task_divisions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('sapid')->nullable();
-            $table->integer('pa_year');
-            $table->integer('pa_round');
-            $table->text('pa_name');
-            $table->integer('pa_group_id');
-            // $table->integer('task_division_id');
-            $table->string('pa_weight');
+            $table->integer('pa_id');
+            $table->integer('task_division_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreatePasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pas');
+        Schema::dropIfExists('pa_task_divisions');
     }
 }
