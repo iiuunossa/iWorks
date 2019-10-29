@@ -15,6 +15,7 @@
         <th scope="col" class="text-left">ลำดับ</th>
         <th scope="col" class="text-left">รอบการประเมิน</th>
         <th scope="col" class="text-left">งานที่รับผิดชอบ</th>
+        <th scope="col" class="text-left">หมวดงานของหน่วยงาน</th>
         <th scope="col" class="text-center">น้ำหนัก (%)</th>
         <th></th>  
     </tr>
@@ -25,6 +26,13 @@
         <td>{{ $pa->id }}</td>
         <td>{{$pa->pa_round}}/ {{$pa->pa_year}}</td>
         <td>{{ $pa->pa_name}}</td>
+        <td>
+          <ul>
+            @foreach($pa->taskDivisions as $task)
+              <li>{{ $task->task_division_name }}</li>
+            @endforeach
+          </ul>
+        </td>
         <td align="center">{{ $pa->pa_weight}} %</td>
         <td align="right">
         <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i></button>
