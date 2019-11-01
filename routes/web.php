@@ -58,3 +58,7 @@ Route::get('/show-group/{id}','GroupController@edit');
 Route::patch('/show-group/{id}','GroupController@update');
 Route::delete('show-group/{id}','GroupController@destroy');
 
+
+Route::get('/tag', function(){
+    return view('test-tag');
+});
