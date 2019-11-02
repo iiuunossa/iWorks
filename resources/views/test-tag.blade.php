@@ -11,48 +11,26 @@
         <script src="{{ url('css/tagify/tagify.js') }}"></script>
     </head>
 <body>
-    <form>
+    <form action="/post-tag" method="POST">
+        @csrf
         <section id="section-extra-properties">
-            <input class='countries' name='tags3-1' placeholder="Try to add tags from the list">
+            <input class='countries' name='tag' placeholder="Try to add tags from the list">
         </section>
-
+        <button type="submit">submit</button>
     </form>
-    <script data-name="extra-properties">
-        (function(){
-            var tagify = new Tagify(document.querySelector('input[name=tags3-1]'), {
-            enforceWhitelist : true,
-            whitelist : [
-              { value:'Development', code:'Dev' },
-              { value:'Maintain', code:'MA' },
-              { value:'Rebed', code:'RB' },
-              { value:'Consult', code:'CS' },
-              { value:'Hang out', code:'HO' },
-            ],
-            dropdown : {
-                enabled: 1,
-                classname : 'extra-properties'
-            }
-        })
-        
-        tagify.on('click', function(e){
-            console.log(e.detail);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <script data-name="extra-properties"> 
+        var input = document.querySelector('input[name=tag]'),
+        tagify = new Tagify(input, {
+            whitelist: @json($data),
+            enforceWhitelist: true,
         });
-        
-        tagify.on('remove', function(e){
-            console.log(e.detail);
-        });
+        tagify.addTags(@json($myTag));
         
         tagify.on('add', function(e){
-            console.log( "original Input:", tagify.DOM.originalInput);
-            console.log( "original Input's value:", tagify.DOM.originalInput.value);
-            console.log( "event detail:", e.detail);
+            console.log(e.detail)
         });
-        
-        // add the first 2 tags from the "allowedTags" Aray automatically
-        // tagify.addTags(tagify.settings.whitelist.slice(0,2));
-        
-        })()
+
     </script>
-        
 </body>
 </html>

@@ -33,5 +33,4 @@
 <script src="{{url('/js/jquery-3.4.0.min.js') }}"></script>
 <script src="{{url('/js/popper.min.js')}}"></script>
 <script src= "{{url('/js/bootstrap/bootstrap.min.js')}}"></script>
-
 </html>

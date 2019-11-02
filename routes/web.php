@@ -60,5 +60,20 @@ Route::delete('show-group/{id}','GroupController@destroy');
 
 
 Route::get('/tag', function(){
-    return view('test-tag');
+    $data[] = ['value' => 'Dev'];
+    $data[] = ['value' => 'Dancing'];
+    $data[] = ['value' => 'MA'];
+
+    $myTag[] = ['value' => 'Dev'];
+    
+    return view('test-tag')->with(['data' => $data, 'myTag' => $myTag]);
+});
+
+Route::post('/post-tag', function(){
+    $tags = json_decode(request()->input('tag'),true);
+    foreach($tags as $tag)
+    {
+        \Log::info($tag);
+    }
+    return $tags;
 });
