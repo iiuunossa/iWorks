@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Task;
 use \App\Type;
+use App\Tag;
 
 class TaskController extends Controller
 {
@@ -59,19 +60,12 @@ class TaskController extends Controller
 
         $request->validate($validate,$messageError);
         
-        $task = new \App\Task();
-        $task->type_id = $request->input('type_id');
-        $task->detail = $request->input('detail');
-        $task->date = $request->input('date');
-        $task->beg_time = $request->input('beg_time');
-        $task->end_time = $request->input('end_time');
-        $task->status =$request->input('status');
-        $task->save(); 
+        $tags = $this->tags($request->tags);
 
+        $task = Task::create($request->all());
+        $task->tags()->sync($tags);
 
         return redirect('show-task')->with('success','บันทึกข้อมูลสำเร็จ');
-       // return view('tasks.create_task');
-        //return $request -> all();
     }
 
     /**
@@ -85,7 +79,8 @@ class TaskController extends Controller
         $pas = \App\Pa::all();
         $tasks = \App\Task::all();  
         $task_divisions = \App\TaskDivision::all();
-        return view('tasks.show_task')->with(['tasks' => $tasks,'pas' => $pas, 'task_divisions' => $task_divisions]);
+        $tags = Tag::all();
+        return view('tasks.show_task')->with(['tasks' => $tasks,'pas' => $pas, 'task_divisions' => $task_divisions, 'tags' => $tags]);
         
     }
 
@@ -123,5 +118,16 @@ class TaskController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    protected function tags($data)
+    {
+        $getTags = json_decode($data, true);
+        $getTagsArray = [];
+        foreach($getTags as $getTag)
+        {
+            $getTagsArray[] = $getTag['id'];
+        }
+        return $getTagsArray;
     }
 }

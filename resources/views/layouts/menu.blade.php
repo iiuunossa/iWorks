@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="{{url('/css/bootstrap/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{url('/css/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url('/css/tagify/tagify.css') }}">
     
     
     <title>@yield('title')</title>
@@ -82,11 +83,10 @@
     <footer>
         @yield('footer')
     </footer>
-
+    <script src="{{url('/js/jquery-3.4.0.min.js') }}"></script>
+    <script src="{{url('/js/popper.min.js')}}"></script>
+    <script src= "{{url('/js/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="{{ url('/css/tagify/tagify.js') }}"></script>
+    @yield('extra-script')
 </body>
-
-<script src="{{url('/js/jquery-3.4.0.min.js') }}"></script>
-<script src="{{url('/js/popper.min.js')}}"></script>
-<script src= "{{url('/js/bootstrap/bootstrap.min.js')}}"></script>
-
 </html>

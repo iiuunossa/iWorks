@@ -30,4 +30,9 @@ class Task extends Model
         return date('h:i', strtotime($this->end_time) - strtotime($this->beg_time));
 
     } 
+
+    public function tags () 
+    {
+        return $this->belongsToMany(Tag::class,'task_tags');
+    }
 }
