@@ -8,7 +8,8 @@ class Tag extends Model
 {
     protected $fillable = [
         'id',
-        'value'
+        'value',
+        'description'
     ];
 
     public function tasks ()
