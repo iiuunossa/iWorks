@@ -41,7 +41,7 @@
                 <i class="fa fa-cog" aria-hidden="true"> จัดการข้อมูลภาระงาน</i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="manage_task">
-                <a class="dropdown-item" href="/show-type">หมวดงานย่อย (Tag)</a>
+                <a class="dropdown-item" href="/show-tag">หมวดงานย่อย (Tag)</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/show-group">หมวดงานของคณะฯ</a>
                 <a class="dropdown-item" href="/show-division">หมวดงานของหน่วยงาน</a>

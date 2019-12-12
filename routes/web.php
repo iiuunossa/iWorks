@@ -36,6 +36,11 @@ Route::post('/pa','PaController@store');
 Route::get('/type','TypeController@create');
 Route::post('/type','TypeController@store');
 
+Route::get('/tag','TagController@create');
+Route::post('/tag','TagController@store');
+
+
+
 Route::get('/search', function () {
     return view('layouts.search');
 });
@@ -48,6 +53,10 @@ Route::get('/show-pa','PaController@show');
 Route::get('/show-task','TaskController@show');
 Route::patch('/show-task/{id}','TaskController@update');
 Route::get('/show-type','TypeController@show');
+Route::get('/show-tag','TagController@show');
+
+
+
 
 
 Auth::routes();
