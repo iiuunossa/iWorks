@@ -42,8 +42,8 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-			<label for="tag"><b>ชื่อหมวดงานย่อย (Tag) : </b></label>
-            <input type="text" class="form-control" id="tag" name="tag" value="{{old('value',isset($tag) ? $tag-> value:'')}}">
+			<label for="value"><b>ชื่อหมวดงานย่อย (Tag) : </b></label>
+            <input type="text" class="form-control" id="value" name="value" value="{{old('value',isset($tag) ? $tag-> value:'')}}">
 		</div>
         <div class="form-group col-md-6">
             <label for="description"><b>คำอธิบาย Tag : </b></label>
