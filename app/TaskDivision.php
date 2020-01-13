@@ -19,4 +19,9 @@ class TaskDivision extends Model
     public function pas() {
         return $this->belongsToMany(Pa::class,'pa_task_divisions')->withTimestamps();
     }
+
+    public function pataskdivisions(){
+        return $this->hasMany(PaTaskDivision::class, 'task_division_id','id');
+    }
+
 }

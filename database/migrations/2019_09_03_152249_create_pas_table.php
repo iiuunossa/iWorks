@@ -21,7 +21,7 @@ class CreatePasTable extends Migration
             $table->text('pa_name');
             $table->integer('pa_group_id');
             // $table->integer('task_division_id');
-            $table->string('pa_weight');
+            $table->integer('pa_weight');
             $table->timestamps();
         });
     }

@@ -60,7 +60,7 @@
           <div class="form-group row">
               <label for="type_id" class="col-sm-2 col-md-2 col-lg-2 col-form-lable"><b>หมวดงาน (หน่วยงาน) : </b></label>
               <div class="col-sm-4">
-                  <select class="form-control" id="type_id" name="type_id">
+                  <select class="form-control" id="task_id" name="task_id">
                     <option value="" hidden select>เลือกหมวดงาน</option>
                     @foreach($task_divisions as $task_division)
                       <option value="{{$task_division->id}}">{{$task_division->task_division_name}}</option>
