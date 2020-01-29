@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     Protected $fillable = [
-        'task_id',
+        'task_division_id',
         'detail',
         'date',
         'beg_time',
@@ -33,10 +33,12 @@ class Task extends Model
 
     public function tags () 
     {
-        return $this->belongsToMany(Tag::class,'task_tags');
+        return $this->belongsTo(Tag::class,'task_tags');
     }
 
-    public function pataskdivision(){
-        return $this->belongsToMany(PaTaskDivision::class,'task_division_id');
+
+
+    public function taskDivisions() {
+        return $this->belongsTo(TaskDivision::class,'task_division_id')->withTimestamps();
     }
 }

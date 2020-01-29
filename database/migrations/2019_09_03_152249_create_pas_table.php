@@ -16,12 +16,12 @@ class CreatePasTable extends Migration
         Schema::create('pas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('sapid')->nullable();
-            $table->integer('pa_year');
-            $table->integer('pa_round');
-            $table->text('pa_name');
-            $table->integer('pa_group_id');
+            $table->integer('year');
+            $table->integer('round');
+            $table->text('name');
+            $table->integer('group_id');
             // $table->integer('task_division_id');
-            $table->integer('pa_weight');
+            $table->integer('weight');
             $table->timestamps();
         });
     }

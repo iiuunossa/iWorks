@@ -8,11 +8,11 @@ class Pa extends Model
 {
     Protected $fillable = [
         'sapid',
-        'pa_year',
-        'pa_round',
-        'pa_name',
-        'pa_group_id',
-        'pa_weight'
+        'year',
+        'round',
+        'name',
+        'group_id',
+        'weight'
 
     ];
 

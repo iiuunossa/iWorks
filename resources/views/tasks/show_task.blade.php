@@ -25,11 +25,16 @@
   </thead>
 
   <tbody>
-    @foreach($tasks as $task)
+  
+    @foreach($tasks as $task) 
+    
     <tr>
-        <td>{{ $task->id }}</td>    
-        <td>{{ $task->task_division_name}}</td>
-        <td>{{date('d M, Y', strtotime($task->date))}}</td>
+        <td>{{ $task->id }}</td>
+        <td>{{ $task->taskDivisions->task_division_name}}</td>
+
+
+
+        <td>{{ date('d M, Y', strtotime($task->date))}}</td>
         <td>{{ $task->beg_time}}</td>
         <td>{{ $task->end_time}}</td>
         <td>{{ $task->getDiffTime()}} ชั่วโมง</td>
@@ -43,8 +48,8 @@
           </form>
           @if(!$task->status)
             <button class="btn btn-success"
-            onclick="document.getElementById('complete-{{ $task->id }}').submit()"
-            ><i class="fas fa-check-circle"></i></button>
+            onclick="document.getElementById('complete-{{ $task->id }}').submit()">
+            <i class="fa fa-check-circle"></i></button>
           @endif
         </th>
 

@@ -45,7 +45,7 @@ class TaskController extends Controller
             'date' => 'required',
             'beg_time' => 'required',
             'end_time' => 'required',
-            'task_id' => 'required',
+            'task_division_id' => 'required',
             'detail' => 'required',
             'detail' => 'required|min:5',
         ];
@@ -53,7 +53,7 @@ class TaskController extends Controller
             'date.required' => 'กรุณาใส่วันที่ทำงาน',
             'beg_time.required' => 'กรุณาใส่เวลาเริ่มต้น',
             'end_time.required' => 'กรุณาใส่เวลาสิ้นสุด',
-            'task_id.required' => 'กรุณาเลือกหมวดงาน',
+            'task_division_id.required' => 'กรุณาเลือกหมวดงาน',
             'detail.required' => 'กรุณาใส่รายละเอียด',
             'detail.min' => 'กรุณาใส่รายละเอียดงานอย่างน้อย 5 ตัวอักษร', 
         ];

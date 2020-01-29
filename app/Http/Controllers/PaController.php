@@ -40,20 +40,20 @@ class PaController extends Controller
     {
         //return $request->all();
         $validate =[
-            'pa_year' => 'required',
-            'pa_round' => 'required',
-            'pa_group_id' => 'required',
-            'pa_name' => 'required',
-            'pa_name' => 'required|min:5',
-            'pa_weight' => 'required',
+            'year' => 'required',
+            'round' => 'required',
+            'group_id' => 'required',
+            'name' => 'required',
+            'name' => 'required|min:5',
+            'weight' => 'required',
         ];
         $messageError = [
-            'pa_year.required' => 'กรุณาใส่ข้อมูลปีประเมินของการทำ PA',
-            'pa_round.required' => 'กรุณาใส่ข้อมูลรอบการประเมินของการทำ PA',
-            'pa_group_id.required' => 'กรุณาเลือกหมวดงานคณะฯ',
-            'pa_name.required' => 'กรุณาใส่รายละเอียดงานที่ความรับผิดชอบ', 
-            'pa_name.min' => 'กรุณาใส่ส่รายละเอียดงานที่ความรับผิดชอบอย่างน้อย 5 ตัวอักษร',
-            'pa_weight.required' => 'กรุณาใส่ข้อมูลเปอร์เซ็นต์ของ PA', 
+            'year.required' => 'กรุณาใส่ข้อมูลปีประเมินของการทำ PA',
+            'round.required' => 'กรุณาใส่ข้อมูลรอบการประเมินของการทำ PA',
+            'group_id.required' => 'กรุณาเลือกหมวดงานคณะฯ',
+            'name.required' => 'กรุณาใส่รายละเอียดงานที่ความรับผิดชอบ', 
+            'name.min' => 'กรุณาใส่ส่รายละเอียดงานที่ความรับผิดชอบอย่างน้อย 5 ตัวอักษร',
+            'weight.required' => 'กรุณาใส่ข้อมูลเปอร์เซ็นต์ของ PA', 
         ];
 
         $request->validate($validate,$messageError);

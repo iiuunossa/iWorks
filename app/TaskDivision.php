@@ -17,11 +17,15 @@ class TaskDivision extends Model
     }
 
     public function pas() {
-        return $this->belongsToMany(Pa::class,'pa_task_divisions')->withTimestamps();
+        return $this->belongsTo(Pa::class,'pa_task_divisions')->withTimestamps();
     }
 
     public function pataskdivisions(){
         return $this->hasMany(PaTaskDivision::class, 'task_division_id','id');
+    }
+
+    public function task(){
+        return $this->hasMany(Task::class,'id','task_division_id');
     }
 
 }

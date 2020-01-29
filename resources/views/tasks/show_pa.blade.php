@@ -24,8 +24,8 @@
     @foreach($pas as $pa)
     <tr>    
         <td>{{ $pa->id }}</td>
-        <td>{{$pa->pa_round}}/ {{$pa->pa_year}}</td>
-        <td>{{ $pa->pa_name}}</td>
+        <td>{{ $pa->round}}/ {{$pa->year}}</td>
+        <td>{{ $pa->name}}</td>
         <td>
           <ul>
             @foreach($pa->taskDivisions as $task)
@@ -33,7 +33,7 @@
             @endforeach
           </ul>
         </td>
-        <td align="center">{{ $pa->pa_weight}} %</td>
+        <td align="center">{{ $pa->weight}} %</td>
         <td align="right">
         <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i></button>
         <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
