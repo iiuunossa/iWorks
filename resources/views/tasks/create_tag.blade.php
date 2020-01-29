@@ -3,7 +3,7 @@
 <div class="container">
 
 
-@if(isset($group))
+@if(isset($tag))
     <form action="{{url('/show-tag',$tag->id)}}" method="post" enctype="multipart/form-data"> 
     <input type="hidden" name="_method" value="PATCH"> 
 @else
@@ -47,7 +47,7 @@
 		</div>
         <div class="form-group col-md-6">
             <label for="description"><b>คำอธิบาย Tag : </b></label>
-            <input type="text" class="form-control" id="description" name="description" value="{{old('description',isset($description) ? $description-> description:'')}}">
+            <input type="text" class="form-control" id="description" name="description" value="{{old('description',isset($tag) ? $tag-> description:'')}}">
         </div>
 	  </div>
 		<button type="submit" class="btn btn-primary">บันทึก</button>

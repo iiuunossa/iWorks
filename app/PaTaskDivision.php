@@ -18,6 +18,6 @@ class PaTaskDivision extends Model
     }
 
     public function taskdivision(){
-        return $this->belongsToMany(TaskDivision::class,'task_division_id');
+        return $this->belongsTo(TaskDivision::class,'task_division_id');
     }
 }

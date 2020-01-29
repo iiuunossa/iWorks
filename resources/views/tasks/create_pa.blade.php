@@ -1,5 +1,16 @@
 
 <div class="container">
+
+
+@if(isset($pa))
+    <form action="{{url('/show-pa',$pa->id)}}" method="post" enctype="multipart/form-data"> 
+    <input type="hidden" name="_method" value="PATCH"> 
+@else
+    <form action="pa" method="post" enctype="multipart/form-data">
+@endif
+
+
+
   <form action="pa" method="post">
       <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br> 
       @if($message = Session::get('success'))
@@ -38,7 +49,7 @@
         <div class="col-sm-12 col-md-6"> 
           <div class="form-group">
             <label for="year"><b>ปีประเมิน : </b></label>
-            <input type="number" class="form-control" id="year" name="year">
+            <input type="number" class="form-control" id="year" name="year" value="{{old('year',isset($pa) ? $pa -> year:'')}}">
           </div>
         </div> 
         <!-- รอบการประเมิน -->

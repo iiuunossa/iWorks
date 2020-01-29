@@ -2,6 +2,13 @@
 
 <div class="container">
 
+@if(isset($task_division))
+    <form action="{{url('/show-division',$task_division->id)}}" method="post" enctype="multipart/form-data"> 
+    <input type="hidden" name="_method" value="PATCH"> 
+@else
+    <form action="division" method="post" enctype="multipart/form-data">
+@endif
+
 <form action="division" method="post">
     <input type="hidden" name="_token" value="{{ csrf_token() }}"> </br> 
 
@@ -32,7 +39,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
 			<label for="task_division_name"><b>ชื่อหมวดงาน : </b></label>
-            <input type="text" class="form-control" id="task_division_name" name="task_division_name">
+        <input type="text" class="form-control" id="task_division_name" name="task_division_name" value="{{old('task_division_name',isset($task_division) ? $task_division -> task_division_name:'')}}">
 		</div>
 	</div>
 		<button type="submit" class="btn btn-primary">บันทึก</button>

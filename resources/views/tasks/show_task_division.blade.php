@@ -23,10 +23,15 @@
     <tr>    
         <td>{{ $task_division->id }}</td>
         <td>{{ $task_division->task_division_name}}</td>
+
+        <form method="POST" action="{{ url('/show-division', $task_division->id) }}">
         <td align="right">
-        <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i></button>
-        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+          <a role="button" class="btn btn-success" href="{{url('/show-division',$task_division->id)}}"><i class="fa fa-pencil"></i></button></a>
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+          <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
         </td>
+      </form>
     </tr>
     @endforeach
   </tbody> 

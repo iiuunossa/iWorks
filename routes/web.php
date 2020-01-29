@@ -67,6 +67,20 @@ Route::get('/show-group/{id}','GroupController@edit');
 Route::patch('/show-group/{id}','GroupController@update');
 Route::delete('show-group/{id}','GroupController@destroy');
 
+Route::get('/show-division/{id}','TaskDivisionController@edit');
+Route::patch('/show-division/{id}','TaskDivisionController@update');
+Route::delete('show-division/{id}','TaskDivisionController@destroy');
+
+Route::get('/show-tag/{id}','TagController@edit');
+Route::patch('/show-tag/{id}','TagController@update');
+Route::delete('show-tag/{id}','TagController@destroy');
+
+Route::get('/show-pa/{id}','PaController@edit');
+Route::patch('/show-pa/{id}','PaController@update');
+Route::delete('show-pa/{id}','PaController@destroy');
+
+
+
 
 Route::get('/tag', function(){
     $data[] = ['id' => 1, 'value' => 'Dev'];

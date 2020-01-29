@@ -34,10 +34,15 @@
           </ul>
         </td>
         <td align="center">{{ $pa->weight}} %</td>
+
+        <form method="POST" action="{{ url('/show-pa', $pa->id) }}">
         <td align="right">
-        <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i></button>
-        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+            <a role="button" class="btn btn-success" href="{{url('/show-pa',$pa->id)}}"><i class="fa fa-pencil"></i></button></a>
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i></button>
         </td>
+        </form>
     </tr>
     @endforeach
   </tbody> 

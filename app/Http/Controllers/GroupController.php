@@ -118,6 +118,6 @@ class GroupController extends Controller
     {
         $group=Group::find($id);
         $group->delete();
-        return back()->with('success','ลบข้อมูลเรียบร้อยแล้ว');
+        return redirect('show-group')->with('success','ลบข้อมูลเรียบร้อยแล้ว');
     }
 }

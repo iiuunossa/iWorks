@@ -21,7 +21,7 @@ class Pa extends Model
     }
 
     public function group(){
-        return $this->belongsToMany(Group::class,'group_id');
+        return $this->belongsTo(Group::class,'group_id');
     }
 
     public function taskDivisions() {

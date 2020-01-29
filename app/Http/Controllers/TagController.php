@@ -77,7 +77,10 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tags = \App\Tag::all(); 
+        $tag = \App\Tag::find($id); 
+        
+        return view('tasks.show_tag')->with(['tags' => $tags, 'tag' => $tag]); 
     }
 
     /**
@@ -89,7 +92,8 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tags = Tag::find($id)->update($request->all());
+        return redirect('show-tag')->with('success','แก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -100,6 +104,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag=Tag::find($id);
+        $tag->delete();
+        return redirect('show-tag')->with('success','ลบข้อมูลเรียบร้อยแล้ว');
     }
 }

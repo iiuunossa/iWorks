@@ -85,7 +85,10 @@ class PaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pas = \App\Pa::all(); 
+        $pa = \App\Pa::find($id); 
+        
+        return view('tasks.show_pa')->with(['pas' => $pas, 'pa' => $pa]);  
     }
 
     /**
@@ -97,7 +100,8 @@ class PaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pas = Pa::find($id)->update($request->all());
+        return redirect('show-pa')->with('success','แก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -108,6 +112,8 @@ class PaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pa=Pa::find($id);
+        $pa->delete();
+        return redirect('show-pa')->with('success','ลบข้อมูลเรียบร้อยแล้ว');
     }
 }

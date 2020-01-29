@@ -77,7 +77,10 @@ class TaskDivisionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task_divisions = \App\TaskDivision::all(); 
+        $task_division = \App\TaskDivision::find($id); 
+        
+        return view('tasks.show_task_division')->with(['task_divisions' => $task_divisions, 'task_division' => $task_division]); 
     }
 
     /**
@@ -89,7 +92,8 @@ class TaskDivisionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task_divisions = TaskDivision::find($id)->update($request->all());
+        return redirect('show-division')->with('success','แก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -100,6 +104,10 @@ class TaskDivisionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task_division=TaskDivision::find($id);
+        $task_division->delete();
+        return redirect('show-division')->with('success','ลบข้อมูลเรียบร้อยแล้ว');
+    
     }
+
 }
