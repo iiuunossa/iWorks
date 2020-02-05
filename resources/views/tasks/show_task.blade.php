@@ -30,7 +30,7 @@
     
     <tr>
         <td>{{ $task->id }}</td>
-        <td>{{ $task->task_division_id}}</td>
+        <td>{{ $task->taskDivision->task_division_name }}</td>
         <td>{{ date('d M, Y', strtotime($task->date))}}</td>
         <td>{{ $task->beg_time}}</td>
         <td>{{ $task->end_time}}</td>

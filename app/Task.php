@@ -36,9 +36,7 @@ class Task extends Model
         return $this->belongsToMany(Tag::class,'task_tags');
     }
 
-
-
-    public function taskDivisions() {
-        return $this->belongsToMany(TaskDivision::class,'task_division_id')->withTimestamps();
+    public function taskDivision () {
+        return $this->belongsTo(TaskDivision::class);
     }
 }
