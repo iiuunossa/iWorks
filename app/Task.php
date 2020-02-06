@@ -37,6 +37,6 @@ class Task extends Model
     }
 
     public function taskDivision () {
-        return $this->belongsTo(TaskDivision::class); 
+        return $this->belongsTo(TaskDivision::class);
     }
 }
