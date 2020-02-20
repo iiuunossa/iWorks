@@ -58,12 +58,13 @@
             <label for="round"><b>รอบการประเมิน : </b></label><br>
             <div class="form-check-inline pt-1">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="round" id="round" value="1" checked><label for="round">รอบที่ 1</label>
+                {{-- <input type="radio" class="form-check-input" name="round" id="round" value="1" checked><label for="round">รอบที่ 1</label> --}}
+                <input type="radio" class="form-check-input" name="round" id="round" value="1" checked {{ old('round') == 1 ? 'checked' : ''}}><label for="round">รอบที่ 1</label>
               </label>
             </div>
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="round" id="round2" value="2"><label for="round2">รอบที่ 2</label>
+                <input type="radio" class="form-check-input" name="round" id="round2" value="2" {{ old('round') == 0 && old('round') !== null ? 'checked' : ''}}><label for="round2">รอบที่ 2</label>
               </label>
             </div>
           </div>
@@ -74,7 +75,7 @@
           <div class="col-sm-12 col-md-6">
             <div class="form-group">
               <label for="name"><b>งานที่รับผิดชอบ (PA) : </b></label>
-              <textarea class="form-control" rows="3" id="name" name="name"></textarea>
+            <textarea class="form-control" rows="3" id="name" name="name" value="{{old('name',isset($pa) ? $pa -> name:'')}}"></textarea>
             </div>
           </div>
           <!-- หมวดงานของคณะฯ  -->
@@ -83,7 +84,8 @@
               <label><b>หมวดงานของคณะฯ : </b></label>
               @foreach($groups as $group)
                 <div class="form-check">
-                <input class="form-check-input" type="radio" name="group_id" id="{{ $group->id }}" value="{{ $group->id}}">
+                {{-- <input class="form-check-input" type="radio" name="group_id" id="{{ $group->id }}" value="{{ $group->id}}"> --}}
+                <input class="form-check-input" type="radio" name="group_id" id="{{ $group->id }}" value="{{ old('group_id',isset($group->id) ? $group -> id:'')}}">
                   <label class="form-check-label" for="{{ $group->id }}"> {{ $group->group_name }}</label>
                 </div>
               @endforeach
@@ -97,7 +99,8 @@
             <label for="task_divisions"><b>หมวดงานของหน่วยงาน :</b></label><br/>
             @foreach($task_divisions as $task_division)
               <label class="checkbox-inline">
-                <input name="task_divisions[]" type="checkbox" value="{{ $task_division->id }}">
+                {{-- <input name="task_divisions[]" type="checkbox" value="{{ $task_division->id }}"> --}}
+                <input name="task_divisions[]" type="checkbox" value="{{ old('task_divisions[]',isset($task_division->id) ? $task_division -> id:'')}}">
                 {{ $task_division->task_division_name }}
               </label>
             @endforeach
@@ -106,7 +109,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="weight"><b>น้ำหนัก (%) : </b></label>
-            <input type="number" class="form-control" id="weight" name="weight">
+            <input type="number" class="form-control" id="weight" name="weight" value="{{old('weight',isset($pa) ? $pa -> weight:'')}}">
           </div>
         </div> 
       </div>
